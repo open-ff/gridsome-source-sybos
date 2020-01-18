@@ -1,19 +1,13 @@
 {
-  "name": "gridsome-source-sybos",
-  "version": "1.0.0-alpha.1",
-  "main": "src/index.js",
-  "repository": "https://github.com/open-ff/gridsome-source-sybos.git",
-  "author": "Christoph Hochstrasser <christoph@hochstrasser.io>",
-  "license": "MIT",
-  "dependencies": {
-    "lodash": "^4.17.15",
-    "xml2js": "^0.4.23",
-    "axios": "^0.19.1",
-    "date-fns": "^2.9.0"
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.20.2"
   },
-  "keywords": [
-    "gridsome",
-    "gridsome-plugin",
-    "gridsome-source"
-  ]
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=8.3",
+    "yarn": "^1.5.1"
+  }
 }
