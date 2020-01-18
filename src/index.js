@@ -1,20 +1,33 @@
 const SybosOperations = require('./api/operations')
 const axios = require('axios')
+const merge = require('lodash/merge')
 
 class SybosSource {
   static defaultOptions() {
     return {
       token: null,
       baseUrl: 'https://sybos.ooelfv.at/sybServices/',
-      operations: {},
-      events: {},
-      personnel: {},
-      equipment: {},
-      departments: {},
-      metadata: {},
+      operations: {
+        enabled: false,
+      },
+      events: {
+        enabled: false,
+      },
+      personnel: {
+        enabled: false,
+      },
+      equipment: {
+        enabled: false,
+      },
+      departments: {
+        enabled: false,
+      },
+      metadata: {
+        enabled: false,
+      },
     }
   }
-  
+
   constructor(api, options) {
     this.api = api
     this.options = options
@@ -29,10 +42,14 @@ class SybosSource {
       this.addCommonSchemaTypes(actions)
     })
 
-    new SybosOperations(this.client, api, {
-      ...SybosOperations.defaultOptions(),
-      ...(options.operations || {})
-    })
+    // TODO: Conditionally enable APIs, all APIs are default off
+    if (options.operations.enabled) {
+      new SybosOperations(
+        this.client,
+        api,
+        merge({}, SybosOperations.defaultOptions(), options.operations)
+      )
+    }
   }
 
   addCommonSchemaTypes(actions) {
