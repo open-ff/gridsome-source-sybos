@@ -1,5 +1,5 @@
 {
-  "name": "@openbos/gridsome-source-sybos-operations",
+  "name": "@openbos/gridsome-metadata-sybos-personnel",
   "description": "> TODO: description",
   "version": "1.0.0-alpha.1",
   "author": "Christoph Hochstrasser <christoph@hochstrasser.io>",
@@ -23,7 +23,6 @@
   },
   "dependencies": {
     "axios": "^0.19.1",
-    "xml2js": "^0.4.23",
-    "date-fns": "^2.9.0"
+    "xml2js": "^0.4.23"
   }
 }

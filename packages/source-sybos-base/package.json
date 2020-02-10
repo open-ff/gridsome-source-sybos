@@ -1,15 +1,17 @@
 {
-  "name": "@openbos/gridsome-source-sybos-operations",
+  "name": "@openbos/gridsome-source-sybos-base",
+  "version": "1.0.0-alpha.2",
   "description": "> TODO: description",
-  "version": "1.0.0-alpha.1",
   "author": "Christoph Hochstrasser <christoph@hochstrasser.io>",
   "homepage": "https://github.com/open-ff/gridsome-source-sybos#readme",
-  "license": "MIT",
+  "license": "ISC",
   "main": "index.js",
-  "keywords": [
-    "gridsome",
-    "gridsome-plugin",
-    "gridsome-source"
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
   ],
   "repository": {
     "type": "git",
@@ -20,10 +22,5 @@
   },
   "bugs": {
     "url": "https://github.com/open-ff/gridsome-source-sybos/issues"
-  },
-  "dependencies": {
-    "axios": "^0.19.1",
-    "xml2js": "^0.4.23",
-    "date-fns": "^2.9.0"
   }
 }
