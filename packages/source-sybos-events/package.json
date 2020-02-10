@@ -13,13 +13,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/open-ff/gridsome-source-sybos.git"
+    "url": "git+https://github.com/OpenBOS/gridsome-source-sybos.git"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
-    "url": "https://github.com/open-ff/gridsome-source-sybos/issues"
+    "url": "https://github.com/OpenBOS/gridsome-source-sybos/issues"
   },
   "dependencies": {
     "axios": "^0.19.1",
