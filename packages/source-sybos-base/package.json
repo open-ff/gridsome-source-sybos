@@ -22,5 +22,8 @@
   },
   "bugs": {
     "url": "https://github.com/open-ff/gridsome-source-sybos/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

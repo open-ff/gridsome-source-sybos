@@ -24,5 +24,8 @@
   "dependencies": {
     "axios": "^0.19.1",
     "xml2js": "^0.4.23"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
