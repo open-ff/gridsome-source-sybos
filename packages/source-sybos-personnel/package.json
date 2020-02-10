@@ -1,7 +1,7 @@
 {
   "name": "@openbos/gridsome-source-sybos-personnel",
   "description": "> TODO: description",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.5",
   "author": "Christoph Hochstrasser <christoph@hochstrasser.io>",
   "homepage": "https://github.com/open-ff/gridsome-source-sybos#readme",
   "license": "MIT",
