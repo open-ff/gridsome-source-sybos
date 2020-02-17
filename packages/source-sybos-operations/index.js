@@ -26,7 +26,7 @@ class SybosOperationsSource {
     
     api.loadSource(async actions => {
       actions.addSchemaTypes(`
-        type ${this.options.typeName} implements Node {
+        type ${this.options.typeName} implements Node @infer {
           title: String
           year: String
           commander: String
@@ -148,10 +148,15 @@ class SybosOperationsSource {
       personnelCount: parseInt(item.mannschaft[0], 10),
       totalPersonnelHours: parseFloat(item.Dauer[0].replace(',', '.')) * parseInt(item.mannschaft[0], 10),
       category: item.kategorie[0],
-      content: item.veroeffentltxt[0],
+      // content: item.veroeffentltxt[0],
       organizations,
       vehicles,
       images,
+      internal: {
+        content: item.veroeffentltxt[0],
+        mimeType: 'text/markdown',
+        origin: `operations/${item.id[0]}`,
+      }
     })
   }
 }
