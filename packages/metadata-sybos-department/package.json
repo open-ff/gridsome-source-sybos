@@ -1,7 +1,7 @@
 {
   "name": "@openbos/gridsome-metadata-sybos-department",
   "description": "> TODO: description",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.7",
   "author": "Christoph Hochstrasser <christoph@hochstrasser.io>",
   "homepage": "https://github.com/open-ff/gridsome-source-sybos#readme",
   "license": "MIT",
@@ -22,9 +22,9 @@
     "url": "https://github.com/open-ff/gridsome-source-sybos/issues"
   },
   "dependencies": {
+    "@openbos/gridsome-source-sybos-base": "^1.0.0-alpha.6",
     "axios": "^0.19.1",
-    "xml2js": "^0.4.23",
-    "@openbos/gridsome-source-sybos-base": "^1.0.0-alpha.6"
+    "xml2js": "^0.4.23"
   },
   "publishConfig": {
     "access": "public"
