@@ -1,3 +1,6 @@
+/**
+ * Registers base schema types
+ */
 class SybosBaseSource {
   static defaultOptions() {
     return {}
