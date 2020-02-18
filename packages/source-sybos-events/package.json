@@ -23,7 +23,8 @@
   },
   "dependencies": {
     "axios": "^0.19.1",
-    "xml2js": "^0.4.23"
+    "xml2js": "^0.4.23",
+    "@openbos/gridsome-source-sybos-base": "^1.0.0-alpha.6"
   },
   "gitHead": "78c0eded8da307c66db34d5a650342dbf0d735bd",
   "publishConfig": {
