@@ -104,6 +104,11 @@ class SybosEventsSource {
           images,
           startISO: convertToISODateTime(node.von, node.vont),
           endISO: convertToISODateTime(node.bis, node.bist),
+          internal: {
+            content: item.veroeffentltxt[0],
+            mimeType: 'text/markdown',
+            origin: `operations/${item.id[0]}`,
+          }
         })
       }
 
