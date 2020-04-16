@@ -116,7 +116,7 @@ class SybosEventsSource {
           internal: {
             content: item.veroeffentltxt[0],
             mimeType: 'text/markdown',
-            origin: `operations/${item.id[0]}`,
+            origin: `events/${item.id[0]}`,
           },
         })
       }
