@@ -2,9 +2,12 @@ const axios = require('axios')
 const xml2js = require('xml2js')
 const parse = require('date-fns/parse')
 const formatISO = require('date-fns/formatISO')
+const getYear = require('date-fns/getYear')
+const getMonth = require('date-fns/getMonth')
+const getDate = require('date-fns/getDate')
 
-const convertToISODateTime = (date, time) => {
-  return formatISO(parse(`${date} ${time || '00:00'}`, 'dd.MM.yyyy HH:mm', new Date()))
+function parseDateAndTime(date, time) {
+  return parse(`${date} ${time || '00:00'}`, 'dd.MM.yyyy HH:mm', new Date())
 }
 
 class SybosEventsSource {
@@ -22,7 +25,7 @@ class SybosEventsSource {
   constructor(api, options) {
     this.api = api
     this.options = options
-    
+
     api.loadSource(async actions => {
       await this.fetchData(actions)
     })
@@ -98,17 +101,23 @@ class SybosEventsSource {
           node[key] = item[key][0]
         }
 
+        const startISO = parseDateAndTime(node.von, node.vont)
+        const endISO = parseDateAndTime(node.bis, node.bist)
+
         eventsCollection.addNode({
           id: item.id[0],
           ...node,
           images,
-          startISO: convertToISODateTime(node.von, node.vont),
-          endISO: convertToISODateTime(node.bis, node.bist),
+          year: getYear(startISO),
+          month: getMonth(startISO),
+          day: getDate(startISO),
+          startISO: formatISO(startISO),
+          endISO: formatISO(endISO),
           internal: {
             content: item.veroeffentltxt[0],
             mimeType: 'text/markdown',
             origin: `operations/${item.id[0]}`,
-          }
+          },
         })
       }
 
